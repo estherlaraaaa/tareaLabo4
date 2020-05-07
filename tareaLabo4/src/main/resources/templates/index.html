@@ -3,31 +3,50 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Venta de Producto</title>
+
+<!-- Custom fonts for this template-->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
+
+<!-- Page level plugin CSS-->
+<link href="vendor/datatables/dataTables.bootstrap4.css"
+	rel="stylesheet">
+
+<!-- Custom styles for this template-->
+<link href="css/sb-admin.css" rel="stylesheet">
+
+<script src="https://kit.fontawesome.com/b20aef55a4.js" crossorigin="anonymous"></script>
+
 </head>
-<body>
+<body style = "background-color:#EBF5FB;">
 
-<h1>Ingresar Producto</h1>
-<form th:action="@{/formProducto}" th:object="${producto}" method="post">
-	<label>Nombre del producto:</label>
-	<input type="text" th:field="*{nombre}">
-	<span th:errors="*{nombre}" style="color:#E81505;"></span><br>
-	
-	<label>Descripcion del producto:</label>
-	<input type="text" th:field="*{descripcion}">
-	<span th:errors="*{descripcion}" style="color:#E81505;"></span><br>
-	
-	<label>Precio del producto:</label>
-	<input type="number" th:field="*{precio}">
-	<span th:errors="*{precio}" style="color:#E81505;"></span><br>
-	
-	<label>Fecha de vencimiento del producto:</label>
-	<input type="text" th:field="*{vencimiento}">
-	<span th:errors="*{vencimiento}" style="color:#E81505;"></span><br>
-	
-	<input type="submit" value="Agregar Producto">
+<h1 class="display-1" style = "color:#0000FF;">Ingresar Producto</h1>
 
-</form>
-
-
+	<form th:action="@{/formProducto}" th:object="${producto}" method="post">
+		<div class="form-group">
+			<label style = "color:#0000CD">Nombre del producto:</label>
+			<i class="fas fa-shopping-bag" style = "color:#0000CD"></i>
+			<input type="text" th:field="*{nombre}" class="form-control" placeholder = "Ej: coca cola" style = "background-color:#EBF5FB;"><br>
+			<span th:errors="*{nombre}" style="color:#E81505;" class="alert alert-danger" role = "alert"></span><br>
+			<br>
+			<label style = "color:#0000CD">Descripcion del producto:</label>
+			<i class="fas fa-pen-fancy" style = "color:#0000CD"></i>
+			<input type="text" th:field="*{descripcion}" class="form-control" placeholder = "Ej: presentacion en botella de vidrio" style = "background-color:#EBF5FB;"><br>
+			<span th:errors="*{descripcion}" style="color:#E81505;" class="alert alert-danger" role = "alert"></span><br>
+			<br>
+			<label style = "color:#0000CD">Precio del producto:</label>
+			<i class="fas fa-tag" style = "color:#0000CD"></i>
+			<input type="number" th:field="*{precio}" class="form-control" placeholder = "Ej: 1" style = "background-color:#EBF5FB;"><br>
+			<span th:errors="*{precio}" style="color:#E81505;" class="alert alert-danger" role = "alert"></span><br>
+			<br>
+			<label style = "color:#0000CD">Fecha de vencimiento del producto:</label>
+			<i class="far fa-calendar-times" style = "color:#0000CD"></i>
+			<input type="text" th:field="*{vencimiento}" class="form-control" placeholder = "Ej: 15/05/2020" style = "background-color:#EBF5FB;">
+			<span th:errors="*{vencimiento}" style="color:#E81505;" role = "alert"></span><br>
+			<br>
+			<input type="submit" value="Agregar Producto" class="btn btn-primary">
+		</div>
+	</form>
+	
 </body>
 </html>
